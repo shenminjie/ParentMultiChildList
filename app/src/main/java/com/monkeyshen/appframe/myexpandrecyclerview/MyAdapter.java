@@ -67,7 +67,7 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         if (holder instanceof BuyCarViewHolder) {
             final BuyCar buyCar = mBuyCars.get(position);
             BuyCarViewHolder viewHolder = (BuyCarViewHolder) holder;
-            viewHolder.tv.setText("buycar---视图位置:" + position + ";");
+            viewHolder.tv.setText("购物车---视图位置:" + position + ";");
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -78,7 +78,7 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         if (holder instanceof GoodsViewHolder) {
             final Goods goods = mGoods.get(position);
             GoodsViewHolder viewHolder = (GoodsViewHolder) holder;
-            viewHolder.tv.setText("buycar---视图位置:" + position + ";集合位置:" + goods.getPosition());
+            viewHolder.tv.setText("商品---视图位置:" + position + ";集合位置:" + goods.getPosition());
             viewHolder.bottom.setVisibility(goods.isLast() ? View.VISIBLE : View.GONE);
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
