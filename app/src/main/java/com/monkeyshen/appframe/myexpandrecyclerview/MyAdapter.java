@@ -172,7 +172,7 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             super(itemView);
             tv = (TextView) itemView.findViewById(R.id.tv);
             mCreateBuyTimes++;
-            Log.e("tag", "创建的buycar viewHolder 次数:" + mCreateGoodsTimes);
+            Log.e("tag", "创建的buycar viewHolder 次数:" + mCreateBuyTimes);
         }
     }
 
