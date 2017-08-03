@@ -1,6 +1,7 @@
 package com.monkeyshen.appframe.myexpandrecyclerview;
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,6 +38,12 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private SparseArray<BuyCar> mBuyCars;
     private int mTotalView;
     private OnItemSelectListener mListener;
+
+    /**
+     * 记录商品viewHolder创建的次数跟购物车viewholder的次数
+     */
+    private static int mCreateGoodsTimes;
+    private static int mCreateBuyTimes;
 
 
     enum VIEWTYPE {
@@ -114,6 +121,8 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         //清空数据
         mGoods.clear();
         mBuyCars.clear();
+        mCreateGoodsTimes = 0;
+        mCreateBuyTimes = 0;
 
         int size = 0;
         for (int i = 0; i < mDatas.size(); i++) {
@@ -151,6 +160,8 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             super(itemView);
             tv = (TextView) itemView.findViewById(R.id.tv);
             bottom = itemView.findViewById(R.id.bottom);
+            mCreateGoodsTimes++;
+            Log.e("tag", "创建的goods viewHolder 次数:" + mCreateGoodsTimes);
         }
     }
 
@@ -160,6 +171,8 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         BuyCarViewHolder(View itemView) {
             super(itemView);
             tv = (TextView) itemView.findViewById(R.id.tv);
+            mCreateBuyTimes++;
+            Log.e("tag", "创建的buycar viewHolder 次数:" + mCreateGoodsTimes);
         }
     }
 

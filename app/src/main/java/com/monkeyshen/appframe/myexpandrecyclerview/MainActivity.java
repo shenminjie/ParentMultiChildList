@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.OnItemS
             }
         });
 
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 100; i++) {
             BuyCar buyCar = new BuyCar();
             List<Goods> goodsList = new ArrayList<>();
             for (int j = 0; j < i + 1; j++) {
